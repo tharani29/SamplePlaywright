@@ -2,6 +2,7 @@ import { test, expect } from '@playwright/test';
 import { LoginPage } from '../pages/LoginPage';
 import { HomePage } from '../pages/HomePage';
 import { CartPage} from '../pages/CartPage';
+import { ContactUs } from '../pages/ContactUs';
 
 
 test('test', async ({ page }) => {
@@ -23,4 +24,9 @@ test('test', async ({ page }) => {
   await page.waitForTimeout(3000)
   const status=await cart.checkProductInCart('Nexus 6')
   expect(await status).toBe(true);
+
+  //Contact
+  const contact=new ContactUs(page);
+  await contact.gotoContactUsPage();
+  await contact.fillMessage('Pavan','pavanol@gmail','Hello World');
 });
