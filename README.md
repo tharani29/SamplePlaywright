@@ -38,7 +38,7 @@ Step 3 - Create a test block - test(title, testFunction)
 The keyword 'async' before a function makes the function return a promise
 The keyword 'await' before a function makes the function wait for a promise
 
-Step 4 - Run the test
+Step 4 - Run the test using below steps
 
 1.npx playwright test --project=chromium --headed  FirstTest.spec.js
 
